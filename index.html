@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice and Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    h2 {
+      background-color: #cce6f7;
+      padding: 10px;
+      text-align: center;
+      color: #333;
+      width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .invoice-box {
+      width: 700px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      background-color: #f0faff;
+      border: 2px solid #6b90af;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .invoice-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .invoice-section div {
+      width: 48%;
+      background-color: #e1f4f9;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .invoice-section strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .invoice-table th, .invoice-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .invoice-table th {
+      background-color: #2e3d82;
+      color: white;
+      font-weight: normal;
+    }
+
+    .invoice-summary td {
+      font-weight: bold;
+    }
+
+    .grand-total {
+      background-color: #2e3d82;
+      color: white;
+      text-align: right;
+      font-size: 1.1em;
+    }
+
+    form {
+      border: 2px solid #6b90af;
+      padding: 20px;
+      background-color: #f0faff;
+      width: 700px;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      background-color: #aad8e6;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .form-section {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Invoice</h2>
+  <div class="invoice-box">
+    <div class="invoice-header">
+      <div>Invoice #123456789</div>
+      <div>14 January 2025</div>
+    </div>
+    <div class="invoice-section">
+      <div>
+        <strong>Pay to:</strong>
+        Acme Billing Co.<br>
+        123 Main St.<br>
+        Cityville, NA 12345
+      </div>
+      <div>
+        <strong>Customer:</strong>
+        John Smith<br>
+        321 Willow Way<br>
+        Southeast Northwestershire, MA 54321
+      </div>
+    </div>
+    <table class="invoice-table">
+      <tr>
+        <th>Name / Description</th>
+        <th>Qty.</th>
+        <th>@</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Paperclips</td>
+        <td>1000</td>
+        <td>0.01</td>
+        <td>$10.00</td>
+      </tr>
+      <tr>
+        <td>Staples (box)</td>
+        <td>100</td>
+        <td>1.00</td>
+        <td>$100.00</td>
+      </tr>
+      <tr>
+        <td>Bond Paper (box)</td>
+        <td>100</td>
+        <td>1.00</td>
+        <td>$110.00</td>
+      </tr>
+      <tr class="invoice-summary">
+        <td>Subtotal</td>
+        <td colspan="2"></td>
+        <td>$110.00</td>
+      </tr>
+      <tr class="invoice-summary">
+        <td>Tax</td>
+        <td>8%</td>
+        <td></td>
+        <td>$8.80</td>
+      </tr>
+      <tr class="grand-total">
+        <td colspan="3">Grand Total</td>
+        <td>$118.80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2 class="form-section">User Information Form</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Type your name here">
+
+    <label>Sex:</label>
+    <input type="radio" id="male" name="sex" value="male" checked>
+    <label for="male" style="display:inline;">Male</label>
+    <input type="radio" id="female" name="sex" value="female">
+    <label for="female" style="display:inline;">Female</label>
+    <input type="radio" id="other" name="sex" value="other">
+    <label for="other" style="display:inline;">Other</label>
+
+    <label for="eyeColor">Eye Color</label>
+    <select id="eyeColor" name="eyeColor">
+      <option value="black" selected>black</option>
+      <option value="brown">brown</option>
+      <option value="blue">blue</option>
+      <option value="green">green</option>
+    </select>
+
+    <label>Check all the Applies</label>
+    <input type="checkbox" id="over6ft" name="height" value="over6ft">
+    <label for="over6ft" style="display:inline;">Over 6ft. Tall</label><br>
+    <input type="checkbox" id="over200" name="weight1" value="over200">
+    <label for="over200" style="display:inline;">Over 200 pounds</label><br>
+    <input type="checkbox" id="under200" name="weight2" value="under200">
+    <label for="under200" style="display:inline;">Less than 200 pounds</label>
+
+    <label for="athletic">Describe your athletic ability</label>
+    <textarea id="athletic" name="athletic" rows="4"></textarea>
+
+    <br>
+    <button type="submit" class="submit-btn">Enter my Information</button>
+  </form>
+
+</body>
+</html>
